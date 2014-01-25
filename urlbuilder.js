@@ -40,18 +40,15 @@
   };
 
   if (typeof define === 'function' && define.amd) {
-    console.log('defiiiiiine');
     define(['underscore'], function (underscore) {
       _ = underscore;
       return urlbuilder;
     });
   } else if (typeof require === 'function' &&
     typeof module !== 'undefined' && module.exports) {
-    console.log('loooooooooooool');
     _ = require('underscore');
     module.exports = urlbuilder;
   } else {
-    console.log('ohnoooo');
     _ = root._;
     root.urlbuilder = urlbuilder;
   }
