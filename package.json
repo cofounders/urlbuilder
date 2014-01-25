@@ -1,6 +1,6 @@
 {
   "name": "urlbuilder",
-  "description": "",
+  "description": "Generate URL strings containing variables",
   "version": "0.0.1",
   "author": {
     "name": "Seb Deckers",
