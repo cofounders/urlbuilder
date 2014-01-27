@@ -1,6 +1,12 @@
-(function (root, undefined) {
-
-  var _;
+(function (root, factory) {
+  if (typeof define === 'function' && define.amd) {
+    define(['underscore'], factory);
+  } else if (typeof exports === 'object') {
+    module.exports = factory(require('underscore'));
+  } else {
+    root.urlbuilder = factory(root._);
+  }
+}(this, function (_) {
 
   var urlbuilder = function (url, fields, data, options) {
 
@@ -39,18 +45,5 @@
     return endpoint + query;
   };
 
-  if (typeof define === 'function' && define.amd) {
-    define(['underscore'], function (underscore) {
-      _ = underscore;
-      return urlbuilder;
-    });
-  } else if (typeof require === 'function' &&
-    typeof module !== 'undefined' && module.exports) {
-    _ = require('underscore');
-    module.exports = urlbuilder;
-  } else {
-    _ = root._;
-    root.urlbuilder = urlbuilder;
-  }
-
-})(this);
+  return urlbuilder;
+}));
