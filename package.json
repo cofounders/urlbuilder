@@ -1,7 +1,7 @@
 {
   "name": "urlbuilder",
   "description": "Generate URL strings containing variables",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": {
     "name": "Seb Deckers",
     "email": "seb@ninja.sg"
@@ -11,7 +11,7 @@
     "url": "git@github.com:cofounders/urlbuilder.git"
   },
   "licenses": [{
-    "type": "ISC"
+    "type": "MIT"
   }],
   "scripts": {
     "test": "grunt test"
