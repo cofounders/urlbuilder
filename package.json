@@ -1,7 +1,7 @@
 {
   "name": "urlbuilder",
   "description": "Generate URL strings containing variables",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "author": {
     "name": "Seb Deckers",
     "email": "seb@ninja.sg"
