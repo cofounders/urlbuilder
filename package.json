@@ -10,9 +10,7 @@
     "type": "git",
     "url": "git@github.com:cofounders/urlbuilder.git"
   },
-  "licenses": [{
-    "type": "ISC"
-  }],
+  "license": "MIT",
   "scripts": {
     "test": "grunt test"
   },
