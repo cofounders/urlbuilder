@@ -14,6 +14,10 @@
       url = '';
     }
 
+    if (!_.isObject(fields)) {
+      fields = {};
+    }
+
     var config = _.extend({
       slug: /:(\w+)/g,
       separator: '+'
@@ -21,7 +25,8 @@
 
     var endpoint = url.replace(config.slug, function (match, name) {
       var param = fields[name];
-      return _.isArray(param) ? _.map(param, encodeURIComponent)
+      return !Object.prototype.hasOwnProperty.call(fields, name) ? match
+        : _.isArray(param) ? _.map(param, encodeURIComponent)
           .join(config.separator)
         : _.isFunction(param) ? encodeURIComponent(param(name, fields))
         : encodeURIComponent(param);

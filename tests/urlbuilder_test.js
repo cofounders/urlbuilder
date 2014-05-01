@@ -116,6 +116,31 @@ exports['URL string builder'] = {
 
     test.equals(output, '//example.com/?foo=bar&count=123');
     test.done();
+  },
+
+  'trailing arguments': function (test) {
+    var path = '//example.com/:foo/lol',
+      params = {foo: 'bar'},
+      output = this.urlbuilder(path, params);
+
+    test.equals(output, '//example.com/bar/lol');
+    test.done();
+  },
+
+  'undefined params': function (test) {
+    var path = '//example.com/:seblol',
+      output = this.urlbuilder(path);
+
+    test.equals(output, '//example.com/:seblol');
+    test.done();
+  },
+
+  'custom port number': function (test) {
+    var path = '//example.com:9000/',
+      output = this.urlbuilder(path);
+
+    test.equals(output, '//example.com:9000/');
+    test.done();
   }
 
 };
