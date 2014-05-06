@@ -3,7 +3,7 @@
 exports['CommonJS compatibility'] = {
 
   default: function (test) {
-    test.equal(typeof require('../urlbuilder'), 'function');
+    test.equal(typeof require('../'), 'function');
     test.done();
   }
 
